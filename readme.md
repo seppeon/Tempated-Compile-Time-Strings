@@ -2,6 +2,8 @@ A compile time single header string manipulation library.
 Used for building static strings at compile time.
 This will be redundant with std::string implmentations in C++20.
 
+Define your symbols as static constexpr variables. 
+
 Example:
 ```CPP
 constexpr auto a = CreateCharList<'h', 'e', 'l', 'l', 'o'>{};
