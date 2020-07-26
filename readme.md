@@ -1,5 +1,6 @@
 A compile time single header string manipulation library.
-Used for building static strings at compile time. This will be redundant in C++23.
+Used for building static strings at compile time.
+This will be redundant with std::string implmentations in C++20.
 
 Example:
 ```CPP
