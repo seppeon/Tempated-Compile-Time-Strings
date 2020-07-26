@@ -1,6 +1,6 @@
 A compile time single header string manipulation library.
 Used for building static strings at compile time.
-This will be redundant with std::string implmentations in C++20.
+Designed where template char arguments are more convient than the C++20 constexpr string.
 
 Define your symbols as static constexpr variables. 
 
