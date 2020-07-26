@@ -232,21 +232,21 @@ struct ToCharListImpl<true>
 
 template <>
 struct ToCharListImpl<false>
-	{
-		using type = CharList<'f', 'a', 'l', 's', 'e'>;
-	};
+{
+	using type = CharList<'f', 'a', 'l', 's', 'e'>;
+};
 
-	template <auto ... Vs>
-	struct CharListImpl
-	{
-		using type = decltype(CharList<>::Append((typename ToCharListImpl<Vs>::type{})...));
-	};
+template <auto ... Vs>
+struct CharListImpl
+{
+	using type = decltype(CharList<>::Append((typename ToCharListImpl<Vs>::type{})...));
+};
 
-	template <auto ... Vs>
-	using CreateCharList = typename CharListImpl<Vs...>::type;
+template <auto ... Vs>
+using CreateCharList = typename CharListImpl<Vs...>::type;
 
-	template <char ... c>
-	constexpr auto ToStringView(CharList<c...>) noexcept -> std::string_view
-	{
-		return { std::data(CharList<c...>::value), CharList<c...>::length };
-	}
+template <char ... c>
+constexpr auto ToStringView(CharList<c...>) noexcept -> std::string_view
+{
+	return { std::data(CharList<c...>::value), CharList<c...>::length };
+}
